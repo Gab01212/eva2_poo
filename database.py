@@ -2,20 +2,17 @@ import mysql.connector
 from mysql.connector import Error
 
 def conectar_bd():
-    """
-    Establece la conexión a la base de datos MySQL utilizando la librería oficial mysql-connector-python.
-    Ajusta los valores de host, user, password y database según tu configuración.
-    """
+
     try:
         conexion = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="",  
-            database="evaluacion_poo" 
+            password="",              
+            database="ecotech_db"     
         )
         if conexion.is_connected():
-            print("¡Conexión exitosa a la base de datos MySQL!")
+            print("¡Conexión exitosa a la base de datos MySQL de EcoTech Solutions!")
             return conexion
     except Error as e:
-        print(f"Error al conectar a MySQL: {e}")
+        print(f"Error crítico al conectar a la base de datos: {e}")
         return None
